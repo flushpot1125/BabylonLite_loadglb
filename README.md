@@ -20,6 +20,27 @@ $ npm run dev
 
 "http://localhost:5173" のようにURLが表示されるので、ブラウザでアクセスします。  
 
+# 追記：Dockerで起動する方法
+
+Dockerfileとcompose.ymlを追加しました。Docker Desktop (4.490.0以上)をインストールしている場合、以下のコマンド実行でも動かすことができます。  
+
+```bash
+$ docker compose up
+```
+1-2分のモジュールダウンロードやビルド時間経過後、ログに下記が表示されたら成功です。
+
+```
+> dev
+
+> vite --host
+
+  VITE v8.0.16  ready in 164 ms
+
+  ➜  Local:   http://localhost:5173/
+
+  ➜  Network: http://172.18.0.2:5173/
+```
+
 # パフォーマンス測定方法
 
 Chrome/Edgeブラウザの「開発者ツール」を開いて、「Performance」を選択します。録画ボタンを押してからF5でリロードし、数秒経ってから止めると、読み込み時の時間や読み込みデータ量を確認できます。  
